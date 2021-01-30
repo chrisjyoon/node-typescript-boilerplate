@@ -1,10 +1,15 @@
 import express from 'express';
+import morgan from 'morgan';
+// controllers
+import home from './controllers/home';
+
 const app = express();
 const PORT = 8000;
 
-app.get('/', (req, res) => {
-  res.send('Hello Express + Typescript');
-});
+app.use(morgan('dev'));
+
+app.use('/', home);
+
 app.listen(PORT, () => {
   console.log(`[server]: Server is running at https://localhost:${PORT}`);
 })
