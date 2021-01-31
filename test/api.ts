@@ -9,3 +9,15 @@ describe('GET /', () => {
       .expect(200, done);
   });
 });
+
+describe('POST /email', () => {
+  let data = {};
+  it('respond with 200 sent', (done) => {
+    request(app)
+      .post('/email')
+      .send(data)
+      .set('Accept', 'application/json')
+      .expect('Content-type', 'application/json; charset=utf-8')
+      .expect(200, done);
+  });
+});
