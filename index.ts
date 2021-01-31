@@ -10,6 +10,9 @@ app.use(morgan('dev'));
 
 app.use('/', home);
 
+// start express server
 app.listen(PORT, () => {
   console.log(`[server]: Server is running at https://localhost:${PORT}`);
 })
+
+export default app;
