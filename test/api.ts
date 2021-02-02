@@ -11,7 +11,9 @@ describe('GET /', () => {
 });
 
 describe('POST /email', () => {
-  let data = {};
+  let data = {
+    subject: 'This is from supertest mocha'
+  };
   it('respond with 200 sent', (done) => {
     request(app)
       .post('/email')

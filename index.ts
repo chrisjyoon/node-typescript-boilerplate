@@ -1,5 +1,6 @@
 import express from 'express';
 import morgan from 'morgan';
+import bodyParser from 'body-parser';
 
 import config from './config/config';
 // controllers
@@ -10,6 +11,8 @@ const app = express();
 const PORT = config.port;
 
 app.use(morgan('dev'));
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: true }));
 
 app.get('/', home);
 app.post('/email', email);
